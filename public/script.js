@@ -6,7 +6,8 @@ const todosInput = document.querySelector('.todosInput')
 
 renderTodos();
 
-function addItem() {
+function addItem(e) {
+  e.preventDefault();
     const title = todosInput.value;
     if(title === '') {
         return
@@ -21,6 +22,7 @@ function addItem() {
     fetch('http://localhost:5000/todos', option)
           .then((response) => response.json())
           .then(() => {
+            todosInput.value = '';
             renderTodos();
           });
 }
@@ -144,7 +146,7 @@ fetch(`http://localhost:5000/todos/${id}`, option)
 
 function renderTodos() {
     //   reset all todos
-    todosInput.innerHTML = '';
+    todoContainer.innerHTML = '';
 
     // prepare http request
     const option = {
