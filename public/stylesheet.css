@@ -1,14 +1,25 @@
-h1 {
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(-30deg, #f4f397, #f8f671);
+  }
+
+li {
     font-size: 30px;
     font-weight: bold;
+    padding-bottom: 10px;
+    max-width: 500px;
 }
 
 li {
     font-size: 25px;
+    list-style: none;
 }
 
 input {
-    height: 25px;
+    height: 30px;
 }
 
 li button {
@@ -16,6 +27,12 @@ li button {
     height: 30px;
     line-height: 30px;
     width: 50px;
-    margin: 0 5px 10px 5px;
+    float: right;
+    margin-top: 10px;
 }
+
+.delete {
+    margin-left: 5px;
+}
+
 

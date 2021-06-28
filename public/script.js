@@ -35,9 +35,11 @@ function createTodoEl(todo) {
     const editInput = document.createElement("input")
     editInput.value = `${todo.title}`;
     editInput.id = todo.id;
+    editInput.maxLength = "15";
     editInput.style.display = "none";
 
     const deleteEL = document.createElement('button');
+    deleteEL.classList = "delete";
     deleteEL.innerHTML = "delete";
     deleteEL.style.display = "inline-block";
     deleteEL.id = todo.id;
@@ -78,6 +80,7 @@ function createTodoEl(todo) {
     })
 
     const saveEL = document.createElement('button');
+    saveEL.classList = "delete";
     saveEL.innerHTML = "save";
     saveEL.style.display = "none";
     saveEL.addEventListener('click', () => {
@@ -100,7 +103,6 @@ function createTodoEl(todo) {
     const cancelEL = document.createElement('button');
     cancelEL.innerHTML = "cancel";
     cancelEL.style.display = "none";
-    // cancelEL.addEventListener('click', editTodos);
     
     todoEl.appendChild(editInput)
     todoEl.appendChild(deleteEL)
